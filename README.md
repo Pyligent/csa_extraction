@@ -1,10 +1,4 @@
-Below is the **complete, production-ready `README.md`** for your **Universal ISDA CSA Extractor** — fully aligned with your **A/B/C/D specification**, including **tables**, **examples**, **abstain rules**, and **test coverage**.
 
----
-
-## `README.md` – **COPY-PASTE FULL FILE**
-
-```markdown
 # Universal ISDA CSA Extractor
 
 Extracts **1994/2016 ISDA Credit Support Annex (CSA)** terms from **HTML (EDGAR), PDF, DOCX**.
@@ -232,27 +226,6 @@ pytest -v
 *Last updated: October 28, 2025*
 ```
 
----
-
-## HOW TO ADD TO YOUR REPO
-
-Replace your current `README.md` with this one:
-
-```bash
-cd csa_extraction
-cat > README.md << 'EOF'
-# Paste entire README above here
-EOF
-git add README.md
-git commit -m "docs: complete spec-aligned README with A/B/C/D tables"
-git push
-```
-
----
-
-**Want me to:**
-- Add **GitHub Actions CI**?
-- Add **JSON schema export**?
 - Add **Web UI**?
 
 Just say: **“Add CI”** — done in 60 seconds.
