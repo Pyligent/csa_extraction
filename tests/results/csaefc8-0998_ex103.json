@@ -1,0 +1,715 @@
+{
+  "csa.meta.governing_law": "NY",
+  "csa.meta.agreement_date": "June 19, 2008",
+  "csa.meta.one_way": true,
+  "parties.party_A.name": "WACHOVIA BANK, NATIONAL ASSOCIATION",
+  "parties.party_A.normalized_name": "WACHOVIA BANK, NATIONAL ASSOCIATION",
+  "parties.party_B.name": "WACHOVIA AUTO OWNER TRUST 2008-A",
+  "parties.party_B.normalized_name": "WACHOVIA AUTO OWNER TRUST 2008-A",
+  "parties.party_A.role": "Secured",
+  "parties.party_B.role": "Pledgor",
+  "terms.valuation_agent": "Party A in all circumstances.",
+  "terms.notification_time": "11:00 a.m., New York time, on a Local Business Day.",
+  "terms.valuation_date": "shall be deleted and replaced by the words \u201cnot later than the close of business on each Valuation Date;\u201d provided , that the Delivery Amount shall be calculated, with respect to collateral",
+  "terms.valuation_time": "the close of business in the city of the Valuation Agent on the Local Business Day immediately preceding the Valuation Date or date of calculation, as applicable, provided that the calculations of Value and Credit Support Amount will, as far as practicable, be made as of approximately the same time",
+  "terms.regular_settlement_day": null,
+  "terms.delivery_amount": "Delivery Amount shall be calculated, with respect to collateral posting required by each Rating Agency, by using (i) such Rating Agency\u2019s Valuation Percentages as listed in Annex A, Annex B and Annex C hereto to determine Value and (ii) the Credit Support Amount related to such Rating Agency.\u00a0\u00a0The Delivery Amount shall be the greatest of such calculated amounts. (B) \u201cReturn Amount\u201d has the meaning specified in Paragraph 3(b); provided , that",
+  "terms.return_amount": "Return Amount and Credit Support Amount. (A) \u201cDelivery Amount\u201d has the meaning specified in Paragraph 3(a), except that the words \u201cupon a demand made by the Secured Party on or promptly",
+  "terms.mta.amount": 50000.0,
+  "terms.mta.currency": "USD",
+  "terms.rounding.delivery": {
+    "mode": "UP",
+    "amount": 10000.0,
+    "currency": "USD"
+  },
+  "terms.rounding.return": {
+    "mode": "UP",
+    "amount": 10000.0,
+    "currency": "USD"
+  },
+  "terms.dispute.notice_cutoff": null,
+  "terms.dispute.resolution_timing": "1:00 p.m., New York time on the Local Business Day following the date on which the notice is given that gives rise to a dispute under Paragraph 5.",
+  "terms.return_timing.days": null,
+  "terms.base_currency": null,
+  "terms.eligible_currencies": [],
+  "terms.eligible_currency_includes_base": null,
+  "terms.fx_haircut_pct": null,
+  "eligibility.covered_transactions": [],
+  "eligibility.spot_fx_carveout": null,
+  "eligibility.ratings_condition": "at least (1) AAAm or AAAm-G by S&P and (2) Aaa or Prime -1 by Moody\u2019s (or such other investments as may be affirmed in writing by S&P and Moody\u2019s) as directed by Party A (unless (x) an Event of Default or an Additional Termination Event has occurred with respect to which Party A is the defaulting or",
+  "eligibility.issuer_constraints": "Government Bonds Rated Aa3 or Above by Moody\u2019s with Remaining Maturity: < 1 Year 97% 93% 1 to 2 years 97% 92% 2 to 3 years 97% 91% 3 to 5 years 97% 89% 5 to 7 years 97% 87% 7 to 10 years 97% 86% 10 to 20 years 97% 82% > 20 years 97% 80% Floating-Rate Euro Denominated Euro-Zone Government Bonds Rated Aa3 or Above by Moody\u2019s All maturities: 97% 92% Commercial Paper Rated P1 or above by Moody\u2019s 0% 0%",
+  "csa.regime.default": "sp",
+  "haircuts.matrix": [
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "<1 Year",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "<1 Year",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1 to 2 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1 to 2 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 99.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2 to 3 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2 to 3 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3 to 5 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3 to 5 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 97.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5 to 7 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5 to 7 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 95.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7 to 10 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7 to 10 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 94.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10 to 20 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10 to 20 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 89.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "> 20 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "> 20 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 87.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "All Maturities",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "All Maturities",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 99.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "< 1 Year",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "< 1 Year",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 99.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1 to 2 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1 to 2 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2 to 3 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2 to 3 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 97.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3 to 5 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3 to 5 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 96.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5 to 7 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5 to 7 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 94.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7 to 10 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7 to 10 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 93.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10 to 20 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10 to 20 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 88.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "> 20 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "> 20 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 86.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "All maturities",
+      "regime": "Instrument*",
+      "valuation_percentage": 100.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "All maturities",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "< 1 Year",
+      "regime": "Instrument*",
+      "valuation_percentage": 97.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "< 1 Year",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 93.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1 to 2 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 97.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1 to 2 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 92.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2 to 3 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 97.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2 to 3 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 91.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3 to 5 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 97.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3 to 5 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 89.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5 to 7 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 97.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5 to 7 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 87.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7 to 10 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 97.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7 to 10 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 86.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10 to 20 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 97.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10 to 20 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 82.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "> 20 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 97.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "> 20 years",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 80.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "All maturities:",
+      "regime": "Instrument*",
+      "valuation_percentage": 97.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "All maturities:",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 92.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "",
+      "regime": "Instrument*",
+      "valuation_percentage": 0.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "",
+      "regime": "Moody's First Trigger",
+      "valuation_percentage": 0.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "<1\n      Year",
+      "regime": "Instrument*",
+      "valuation_percentage": 98.9
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "<1\n      Year",
+      "regime": "S&P",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "<1\n      Year",
+      "regime": "S&P",
+      "valuation_percentage": 79.1
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1\n      to 2 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1\n      to 2 years",
+      "regime": "S&P",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1\n      to 2 years",
+      "regime": "S&P",
+      "valuation_percentage": 78.4
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2\n      to 3 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2\n      to 3 years",
+      "regime": "S&P",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2\n      to 3 years",
+      "regime": "S&P",
+      "valuation_percentage": 78.4
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3\n      to 5 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3\n      to 5 years",
+      "regime": "S&P",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3\n      to 5 years",
+      "regime": "S&P",
+      "valuation_percentage": 78.4
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5\n      to 7 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 93.7
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5\n      to 7 years",
+      "regime": "S&P",
+      "valuation_percentage": 92.6
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5\n      to 7 years",
+      "regime": "S&P",
+      "valuation_percentage": 75.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7\n      to 10 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 92.6
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7\n      to 10 years",
+      "regime": "S&P",
+      "valuation_percentage": 92.6
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7\n      to 10 years",
+      "regime": "S&P",
+      "valuation_percentage": 74.1
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10\n      to 20 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 91.1
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10\n      to 20 years",
+      "regime": "S&P",
+      "valuation_percentage": 87.9
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10\n      to 20 years",
+      "regime": "S&P",
+      "valuation_percentage": 72.9
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": ">\n      20 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 88.6
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": ">\n      20 years",
+      "regime": "S&P",
+      "valuation_percentage": 84.6
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": ">\n      20 years",
+      "regime": "S&P",
+      "valuation_percentage": 70.9
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "<\n      1 Year",
+      "regime": "Instrument*",
+      "valuation_percentage": 98.5
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "<\n      1 Year",
+      "regime": "S&P",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "<\n      1 Year",
+      "regime": "S&P",
+      "valuation_percentage": 78.8
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1\n      to 2 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1\n      to 2 years",
+      "regime": "S&P",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1\n      to 2 years",
+      "regime": "S&P",
+      "valuation_percentage": 78.4
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2\n      to 3 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2\n      to 3 years",
+      "regime": "S&P",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2\n      to 3 years",
+      "regime": "S&P",
+      "valuation_percentage": 78.4
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3\n      to 5 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3\n      to 5 years",
+      "regime": "S&P",
+      "valuation_percentage": 98.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3\n      to 5 years",
+      "regime": "S&P",
+      "valuation_percentage": 78.4
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5\n      to 7 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 92.6
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5\n      to 7 years",
+      "regime": "S&P",
+      "valuation_percentage": 92.6
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5\n      to 7 years",
+      "regime": "S&P",
+      "valuation_percentage": 74.1
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7\n      to 10 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 92.6
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7\n      to 10 years",
+      "regime": "S&P",
+      "valuation_percentage": 92.6
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7\n      to 10 years",
+      "regime": "S&P",
+      "valuation_percentage": 74.1
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10\n      to 20 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 87.7
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10\n      to 20 years",
+      "regime": "S&P",
+      "valuation_percentage": 82.6
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10\n      to 20 years",
+      "regime": "S&P",
+      "valuation_percentage": 70.2
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": ">\n      20 years",
+      "regime": "Instrument*",
+      "valuation_percentage": 84.4
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": ">\n      20 years",
+      "regime": "S&P",
+      "valuation_percentage": 77.9
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": ">\n      20 years",
+      "regime": "S&P",
+      "valuation_percentage": 67.5
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "<\n      1 Year",
+      "regime": "S&P",
+      "valuation_percentage": 98.8
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "1\n      to 2 years",
+      "regime": "S&P",
+      "valuation_percentage": 97.9
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "2\n      to 3 years",
+      "regime": "S&P",
+      "valuation_percentage": 96.9
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "3\n      to 5 years",
+      "regime": "S&P",
+      "valuation_percentage": 95.2
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "5\n      to 7 years",
+      "regime": "S&P",
+      "valuation_percentage": 88.7
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "7\n      to 10 years",
+      "regime": "S&P",
+      "valuation_percentage": 87.0
+    },
+    {
+      "asset_type": "Sterling\n      Cash",
+      "maturity_bucket": "10\n      to 20 years",
+      "regime": "S&P",
+      "valuation_percentage": 75.5
+    }
+  ],
+  "caps_windows.cash_cap_pct_of_U": null,
+  "caps_windows.issuer_cap": null,
+  "caps_windows.class_cap": null,
+  "caps_windows.currency_cap": null,
+  "caps_windows.global_cap": null
+}

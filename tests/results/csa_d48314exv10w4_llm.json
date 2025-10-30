@@ -1,0 +1,53 @@
+{
+  "csa.meta.governing_law": null,
+  "csa.meta.agreement_date": "July 18, 2007",
+  "csa.meta.one_way": null,
+  "parties.party_A.name": "BANK OF AMERICA, N.A",
+  "parties.party_A.normalized_name": "BANK OF AMERICA, N.A",
+  "parties.party_B.name": "CENTEX",
+  "parties.party_B.normalized_name": "CENTEX",
+  "parties.party_A.role": null,
+  "parties.party_B.role": null,
+  "terms.valuation_agent": "as of the Valuation Time. The Valuation Agent will notify each party (or the other party, if the Valuation Agent is a party) of its calculations not later than the Notification Time on the Local Business Day following the applicable Valuation Date (or in the case of Paragraph 6(d), following the dat",
+  "terms.notification_time": null,
+  "terms.valuation_date": "if the Delivery Amount for that Valuation Date equals or exceeds the Pledgors Minimum Transfer Amount, then the Pledgor will Transfer to the Secured Party Eligible Credit Support having a Value as of the date of Transfer at least equal to the applicable Delivery Amount (rounded pursuant to Paragr",
+  "terms.valuation_time": ". The Valuation Agent will notify each party (or the other party, if the Valuation Agent is a party) of its calculations not later than the Notification Time on the Local Business Day following the applicable Valuation Date (or in the case of Paragraph 6(d), following the date of calculation).",
+  "terms.regular_settlement_day": null,
+  "terms.delivery_amount": "Delivery Amount. Subject to Paragraphs 4 and 5, upon a demand made by the Secured Party on",
+  "terms.return_amount": "Return Amount. Subject to Paragraphs 4 and 5, upon a demand made by the Pledgor on or promptly",
+  "terms.mta.amount": null,
+  "terms.mta.currency": null,
+  "terms.rounding.delivery": null,
+  "terms.rounding.return": {
+    "mode": "UP",
+    "amount": 10000.0,
+    "currency": "USD"
+  },
+  "terms.dispute.notice_cutoff": null,
+  "terms.dispute.resolution_timing": "then: (i) In the case of a dispute involving a Delivery Amount or Return Amount, unless otherwise specified in Paragraph 13, the Valuation Agent will recalculate the Exposure and the Value as of the Recalculation Date by: (A) utilizing any calculations of Exposure for the Transactions (or Swap Tra",
+  "terms.return_timing.days": 1,
+  "terms.base_currency": null,
+  "terms.eligible_currencies": [],
+  "terms.eligible_currency_includes_base": null,
+  "terms.fx_haircut_pct": null,
+  "eligibility.covered_transactions": [],
+  "eligibility.spot_fx_carveout": null,
+  "eligibility.ratings_condition": "ratings are less than BBB- by S&P and less than Baa3 by Moodys. Subject to Paragraphs 4 and 8, upon written notice from Party B that its long-term senior unsecured debt ratings are equal to or greater than BBB- by S&P or equal to or greater than Baa3 by Moodys, Party A shall return all Pos",
+  "eligibility.issuer_constraints": null,
+  "csa.regime.default": "sp",
+  "haircuts.matrix": [],
+  "caps_windows.cash_cap_pct_of_U": null,
+  "caps_windows.issuer_cap": null,
+  "caps_windows.class_cap": null,
+  "caps_windows.currency_cap": null,
+  "caps_windows.global_cap": null,
+  "paragraph_13": {
+    "title": "). Unless otherwise specified in Paragraph 13, the",
+    "a_obligations": "Security Interest for Obligations. The term  Obligations  as used in this Annex includes no additional obligations with respect to Party A or Party B.",
+    "b_i_credit_support_obligations": " Delivery Amount ,  Return Amount  and  Credit Support Amount  will have the meanings specified in Paragraphs 3(a), 3(b) and 3, respectively.",
+    "b_ii_eligible_collateral_text": "the Value as of that Valuation Date of all Posted Credit Support held by the Secured Party."
+  },
+  "llm": {
+    "error": "object of type 'NoneType' has no len()"
+  }
+}

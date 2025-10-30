@@ -1,0 +1,555 @@
+[ERROR] parties.party_B.name: Expecting value: line 1 column 1 (char 0)
+[ERROR] csa.meta.governing_law: Expecting value: line 1 column 1 (char 0)
+[ERROR] parties.party_A.name: Expecting value: line 1 column 1 (char 0)
+{
+  "csa.meta.governing_law": null,
+  "csa.meta.agreement_date": "June 28, 2007",
+  "csa.meta.one_way": true,
+  "parties.party_A.name": "BANK OF AMERICA, N.A",
+  "parties.party_A.normalized_name": "BANK OF AMERICA, N.A",
+  "parties.party_B.name": "GE CAPITAL CREDIT CARD MASTER NOTE TRUST",
+  "parties.party_B.normalized_name": "GE CAPITAL CREDIT CARD MASTER NOTE TRUST",
+  "parties.party_A.role": null,
+  "parties.party_B.role": null,
+  "terms.valuation_agent": " means Party A, provided, however, that if Party A is a Defaulting Party at the time,  Valuation Agent  shall mean Party B.",
+  "terms.notification_time": " means 1:00 p.m., on a General Business Day in New York. (d) Conditions Precedent and Secured Partys Rights and Remedies.",
+  "terms.valuation_date": " shall be deleted and replaced by the words not later than the close of business on each Valuation Date, (II) by deleting in its entirety the sentence beginning Unless otherwise specified in Paragraph 13 and ending (ii) the Value as of that Valuation Date of all Posted Credit Support held by t",
+  "terms.valuation_time": " means, the close of business in the Relevant Market on the day which is one General Business Day in the Relevant Market first preceding the Valuation Date or date of calculation, as applicable; provided that the calculations of Value and Exposure will be made as of approximately the same time on t",
+  "terms.regular_settlement_day": null,
+  "terms.delivery_amount": null,
+  "terms.return_amount": "Return Amount and",
+  "terms.mta.amount": 50000.0,
+  "terms.mta.currency": "USD",
+  "terms.rounding.delivery": {
+    "mode": "UP",
+    "amount": 10000.0,
+    "currency": "USD"
+  },
+  "terms.rounding.return": null,
+  "terms.dispute.notice_cutoff": null,
+  "terms.dispute.resolution_timing": " means 1:00 p.m., on the New York General Business Day following the date on which the notice is given that gives rise to a dispute under Paragraph 5. (ii) Value.",
+  "terms.return_timing.days": null,
+  "terms.base_currency": null,
+  "terms.eligible_currencies": [],
+  "terms.eligible_currency_includes_base": null,
+  "terms.fx_haircut_pct": null,
+  "eligibility.covered_transactions": [],
+  "eligibility.spot_fx_carveout": null,
+  "eligibility.ratings_condition": "Ratings Downgrade/ Fitch Valuation Percentage S&P Required Ratings Downgrade Valuation Percentage Moodys First Trigger Valuation Percentage Moodys Second Trigger Valuation Percentage (A) Cash 100 % 80 % 100 % 100 % (B) Fixed-Rate Negotiable debt obligations issued by the U.S. Treasury Department h",
+  "eligibility.issuer_constraints": null,
+  "csa.regime.default": null,
+  "haircuts.matrix": [
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "applicable",
+      "regime": "",
+      "valuation_percentage": 1.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "applicable",
+      "regime": "",
+      "valuation_percentage": 2.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "At least AA-",
+      "regime": "",
+      "valuation_percentage": 0.8
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "At least AA-",
+      "regime": "",
+      "valuation_percentage": 1.7
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "A+/A",
+      "regime": "",
+      "valuation_percentage": 0.6
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "A+/A",
+      "regime": "",
+      "valuation_percentage": 1.2
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "A-/BBB+ or lower",
+      "regime": "",
+      "valuation_percentage": 0.5
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "A-/BBB+ or lower",
+      "regime": "",
+      "valuation_percentage": 1.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "Provider of Party A, ifapplicable",
+      "regime": "",
+      "valuation_percentage": 9.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "Provider of Party A, ifapplicable",
+      "regime": "",
+      "valuation_percentage": 10.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "At least AA-",
+      "regime": "",
+      "valuation_percentage": 6.5
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "At least AA-",
+      "regime": "",
+      "valuation_percentage": 7.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "A+/A",
+      "regime": "",
+      "valuation_percentage": 4.6
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "A+/A",
+      "regime": "",
+      "valuation_percentage": 5.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "A-/BBB+ or lower",
+      "regime": "",
+      "valuation_percentage": 4.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "A-/BBB+ or lower",
+      "regime": "",
+      "valuation_percentage": 4.3
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "1 or less",
+      "regime": "",
+      "valuation_percentage": 0.25
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "1 or less",
+      "regime": "",
+      "valuation_percentage": 0.6
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "1 or less",
+      "regime": "",
+      "valuation_percentage": 0.75
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 1 but not\n  more than 2",
+      "regime": "",
+      "valuation_percentage": 0.5
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 1 but not\n  more than 2",
+      "regime": "",
+      "valuation_percentage": 1.2
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 1 but not\n  more than 2",
+      "regime": "",
+      "valuation_percentage": 1.5
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 2 but not\n  more than 3",
+      "regime": "",
+      "valuation_percentage": 0.7
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 2 but not\n  more than 3",
+      "regime": "",
+      "valuation_percentage": 1.7
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 2 but not\n  more than 3",
+      "regime": "",
+      "valuation_percentage": 2.2
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 3 but not\n  more than 4",
+      "regime": "",
+      "valuation_percentage": 1.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 3 but not\n  more than 4",
+      "regime": "",
+      "valuation_percentage": 2.3
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 3 but not\n  more than 4",
+      "regime": "",
+      "valuation_percentage": 2.9
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 4 but not\n  more than 5",
+      "regime": "",
+      "valuation_percentage": 1.2
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 4 but not\n  more than 5",
+      "regime": "",
+      "valuation_percentage": 2.8
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 4 but not\n  more than 5",
+      "regime": "",
+      "valuation_percentage": 3.6
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 5 but not\n  more than 6",
+      "regime": "",
+      "valuation_percentage": 1.4
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 5 but not\n  more than 6",
+      "regime": "",
+      "valuation_percentage": 3.3
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 5 but not\n  more than 6",
+      "regime": "",
+      "valuation_percentage": 4.2
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 6 but not more\n  than 7",
+      "regime": "",
+      "valuation_percentage": 1.6
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 6 but not more\n  than 7",
+      "regime": "",
+      "valuation_percentage": 3.8
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 6 but not more\n  than 7",
+      "regime": "",
+      "valuation_percentage": 4.8
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 7 but not\n  more than 8",
+      "regime": "",
+      "valuation_percentage": 1.8
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 7 but not\n  more than 8",
+      "regime": "",
+      "valuation_percentage": 4.3
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 7 but not\n  more than 8",
+      "regime": "",
+      "valuation_percentage": 5.4
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 8 but not\n  more than 9",
+      "regime": "",
+      "valuation_percentage": 2.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 8 but not\n  more than 9",
+      "regime": "",
+      "valuation_percentage": 4.8
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 8 but not\n  more than 9",
+      "regime": "",
+      "valuation_percentage": 6.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 9 but not\n  more than 10",
+      "regime": "",
+      "valuation_percentage": 2.2
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 9 but not\n  more than 10",
+      "regime": "",
+      "valuation_percentage": 5.3
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 9 but not\n  more than 10",
+      "regime": "",
+      "valuation_percentage": 6.6
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 10 but not\n  more than 11",
+      "regime": "",
+      "valuation_percentage": 2.3
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 10 but not\n  more than 11",
+      "regime": "",
+      "valuation_percentage": 5.6
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 10 but not\n  more than 11",
+      "regime": "",
+      "valuation_percentage": 7.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 11 but not\n  more than 12",
+      "regime": "",
+      "valuation_percentage": 2.5
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 11 but not\n  more than 12",
+      "regime": "",
+      "valuation_percentage": 6.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 11 but not\n  more than 12",
+      "regime": "",
+      "valuation_percentage": 7.5
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 12 but not\n  more than 13",
+      "regime": "",
+      "valuation_percentage": 2.7
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 12 but not\n  more than 13",
+      "regime": "",
+      "valuation_percentage": 6.4
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 12 but not\n  more than 13",
+      "regime": "",
+      "valuation_percentage": 8.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 13 but not\n  more than 14",
+      "regime": "",
+      "valuation_percentage": 2.8
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 13 but not\n  more than 14",
+      "regime": "",
+      "valuation_percentage": 6.8
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 13 but not\n  more than 14",
+      "regime": "",
+      "valuation_percentage": 8.5
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 14 but not\n  more than 15",
+      "regime": "",
+      "valuation_percentage": 3.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 14 but not\n  more than 15",
+      "regime": "",
+      "valuation_percentage": 7.2
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 14 but not\n  more than 15",
+      "regime": "",
+      "valuation_percentage": 9.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 15 but not\n  more than 16",
+      "regime": "",
+      "valuation_percentage": 3.2
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 15 but not\n  more than 16",
+      "regime": "",
+      "valuation_percentage": 7.6
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 15 but not\n  more than 16",
+      "regime": "",
+      "valuation_percentage": 9.5
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 16 but not\n  more than 17",
+      "regime": "",
+      "valuation_percentage": 3.3
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 16 but not\n  more than 17",
+      "regime": "",
+      "valuation_percentage": 7.9
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 16 but not\n  more than 17",
+      "regime": "",
+      "valuation_percentage": 9.9
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 17 but not\n  more than 18",
+      "regime": "",
+      "valuation_percentage": 3.5
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 17 but not\n  more than 18",
+      "regime": "",
+      "valuation_percentage": 8.3
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 17 but not\n  more than 18",
+      "regime": "",
+      "valuation_percentage": 10.4
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 18 but not\n  more than 19",
+      "regime": "",
+      "valuation_percentage": 3.6
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 18 but not\n  more than 19",
+      "regime": "",
+      "valuation_percentage": 8.6
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 18 but not\n  more than 19",
+      "regime": "",
+      "valuation_percentage": 10.8
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 19 but not\n  more than 20",
+      "regime": "",
+      "valuation_percentage": 3.7
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 19 but not\n  more than 20",
+      "regime": "",
+      "valuation_percentage": 9.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 19 but not\n  more than 20",
+      "regime": "",
+      "valuation_percentage": 11.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 20 but not\n  more than 21",
+      "regime": "",
+      "valuation_percentage": 3.9
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 20 but not\n  more than 21",
+      "regime": "",
+      "valuation_percentage": 9.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 20 but not\n  more than 21",
+      "regime": "",
+      "valuation_percentage": 11.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 21",
+      "regime": "",
+      "valuation_percentage": 4.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 21",
+      "regime": "",
+      "valuation_percentage": 9.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "More than 21",
+      "regime": "",
+      "valuation_percentage": 11.0
+    },
+    {
+      "asset_type": "(D)  Fixed-Rate Negotiable debt obligations\n  issued by the U.S. Treasury Department having a remaining maturity on such\n  date of more than ten years",
+      "maturity_bucket": "Date:  6/28/07",
+      "regime": "RemainingWeighted Average Lifeof Hedge in Years",
+      "valuation_percentage": 6.0
+    }
+  ],
+  "caps_windows.cash_cap_pct_of_U": null,
+  "caps_windows.issuer_cap": null,
+  "caps_windows.class_cap": null,
+  "caps_windows.currency_cap": null,
+  "caps_windows.global_cap": null,
+  "paragraph_13": {
+    "title": "Elections and Variables",
+    "a_obligations": "Security Interest for Obligations. (i) The term Obligations as used in this Annex includes no additional obligations within the meaning of Paragraph 12.",
+    "b_i_credit_support_obligations": "Delivery Amount, Return Amount and Credit Support Amount. Delivery Amount  has the meaning specified in Paragraph 3(a) except that (I) the words upon a demand made by the Secured Party on or promptly following a Valuation Date shall be deleted and replaced by the words not later than the close of business on each Valuation Date, (II) by deleting in its entirety the sentence beginning Unless otherwise specified in Paragraph 13 and ending (ii) the Value as of that Valuation Date of all Posted Credit Support held by the Secured Party. shall be deleted in its entirety and replaced with the following: The  Delivery Amount  applicable to the Pledgor for any Valuation Date will equal the greatest of (1) the amount by which (a) the S&P Credit Support Amount for such Valuation Date exceeds (b) the S&P Value as of such Valuation Date of all Posted Credit Support held by the Secured Party, (2) the amount by which (a) the Fitch Credit Support Amount for such Valuation Date exceeds (b) the Fitch Value as of such Valuation Date of all Posted Credit Support held by the Secured Party (3) the amount by which (a) the Moodys First Trigger Credit Support Amount for such Valuation Date exceeds (b) the Moodys First Trigger Value as of such Valuation Date of all Posted Credit Support held by the Secured Party, and (4) the amount by which (a) the Moodys Second Trigger Credit Support Amount for such Valuation Date exceeds (b) the Moodys Second Trigger Value as of such Valuation Date of all Posted Credit Support held by the Secured Party.; and (5) if, on any Valuation Date, the Delivery Amount equals or exceeds the Pledgors Minimum Transfer Amount, the Pledgor will transfer to the Secured Party sufficient Eligible Credit Support to ensure that, immediately following such transfer, the Delivery Amount shall be zero.  Return Amount has the meaning specified in Paragraph 3(b) except that (I) the sentence beginning Unless otherwise specified in Paragraph 13 and ending (ii) the Credit Support Amount. shall be deleted in its entirety and replaced by the following: Copyright © 1994 by International Swaps and Derivative Association, Inc. The  Return Amount  applicable to the Secured Party for any Valuation Date will equal the least of (1) the amount by which (a) the S&P Value as of such Valuation Date of all Posted Credit Support held by the Secured Party exceeds (b) the S&P Credit Support Amount for such Valuation Date, (1) the amount by which (a) the Fitch Value as of such Valuation Date of all Posted Credit Support held by the Secured Party exceeds (b) the Fitch Credit Support Amount for such Valuation Date, (2) the amount by which (a) the Moodys First Trigger Value as of such Valuation Date of all Posted Credit Support held by the Secured Party exceeds (b) the Moodys First Trigger Credit Support Amount for such Valuation Date, and (3) the amount by which (a) the Moodys Second Trigger Value as of such Valuation Date of all Posted Credit Support held by the Secured Party exceeds (b) the Moodys Second Trigger Credit Support Amount for such Valuation Date. ( 4) in no event shall the Transferee be required to transfer any Posted Credit Support under Paragraph 3(b) if, immediately following such transfer, the Delivery Amount would be greater than zero..  Credit Support Amount  shall not apply. For purposes of calculating any Delivery Amount or Return Amount for any Valuation Date, reference shall be made to the S&P Credit Support Amount, the Fitch Credit Support Amount, the Moodys First Trigger Credit Support Amount, or the Moodys Second Trigger Credit Support Amount, in each case for such Valuation Date, as provided in Paragraphs 13(b)(i)(A) and 13(b)(i)(B), above.",
+    "b_ii_eligible_collateral_text": "by deleting in its entirety the sentence beginning Unless otherwise specified in Paragraph 13 and ending (ii) the Value as of that Valuation Date of all Posted Credit Support held by the Secured Party. shall be deleted in its entirety and replaced with the following: The  Delivery Amount  applicable to the Pledgor for any Valuation Date will equal the greatest of"
+  },
+  "llm": {
+    "error": "1 validation error for CSAExtraction\ncsa\n  Assertion failed,  [type=assertion_error, input_value={'meta': {'governing_law': None}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/assertion_error"
+  }
+}

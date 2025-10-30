@@ -1,0 +1,15 @@
+# Environment
+.env
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Editors/OS
+.DS_Store
+.idea/
+.vscode/
+
+# Test cache
+.pytest_cache/
