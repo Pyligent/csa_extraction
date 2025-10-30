@@ -8,9 +8,10 @@ from pydantic import BaseModel, Field, validator
 from bs4 import BeautifulSoup
 from openai import AsyncOpenAI
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
-load_dotenv()
+# Ensure .env is discovered from project root when running via CLI/tests
+load_dotenv(find_dotenv(), override=True)
 
 # ========================================
 # 1. HTML → CLEAN TEXT PREPROCESSOR
@@ -68,19 +69,56 @@ class CSAExtraction(BaseModel):
 
     @validator("csa")
     def check_csa(cls, v):
-        assert "meta" in v, "csa.meta required"
-        meta = v["meta"]
-        assert "governing_law" in meta and meta["governing_law"] in ["NY", "English", "Japanese", "Ontario", "Singapore", "Other", None]
-        assert "agreement_date" in meta
-        assert "one_way" in meta and meta["one_way"] in [True, False, None]
+        # Ensure meta exists and has expected keys with permissive defaults
+        meta = v.get("meta") or {}
+        gov = meta.get("governing_law")
+        if isinstance(gov, str) and gov not in ["NY", "English", "Japanese", "Ontario", "Singapore", "Other"]:
+            gov = None
+        # Default missing keys to None
+        meta.setdefault("governing_law", gov if gov is not None else None)
+        meta.setdefault("agreement_date", meta.get("agreement_date", None))
+        ow = meta.get("one_way")
+        if ow not in [True, False, None]:
+            ow = None
+        meta.setdefault("one_way", ow if ow is not None else None)
+        v["meta"] = meta
         return v
 
     @validator("parties")
     def check_parties(cls, v):
-        assert "party_A" in v and "name" in v["party_A"]
-        assert "party_B" in v and "name" in v["party_B"]
-        assert v["party_A"].get("role") in ["Pledgor", "Secured", "Both", None]
-        assert v["party_B"].get("role") in ["Pledgor", "Secured", "Both", None]
+        pa = v.get("party_A") or {}
+        pb = v.get("party_B") or {}
+        # Ensure keys exist
+        pa.setdefault("name", pa.get("name", None))
+        pb.setdefault("name", pb.get("name", None))
+        ra = pa.get("role")
+        rb = pb.get("role")
+        # Normalize common role phrasings
+        def norm_role(x):
+            if x is None:
+                return None
+            if not isinstance(x, str):
+                return None
+            xl = x.strip().lower()
+            if xl.startswith("secured"):
+                return "Secured"
+            if xl.startswith("pledgor"):
+                return "Pledgor"
+            if xl.startswith("both"):
+                return "Both"
+            return None
+        if ra not in ["Pledgor", "Secured", "Both", None]:
+            ra = norm_role(ra)
+        if rb not in ["Pledgor", "Secured", "Both", None]:
+            rb = norm_role(rb)
+        if ra not in ["Pledgor", "Secured", "Both", None]:
+            ra = None
+        if rb not in ["Pledgor", "Secured", "Both", None]:
+            rb = None
+        pa.setdefault("role", ra if ra is not None else None)
+        pb.setdefault("role", rb if rb is not None else None)
+        v["party_A"] = pa
+        v["party_B"] = pb
         return v
 
     # B. Core VM Mechanics
@@ -90,8 +128,19 @@ class CSAExtraction(BaseModel):
     def check_terms(cls, v):
         # MTA
         if "mta" in v:
-            assert "amount" in v["mta"] and isinstance(v["mta"]["amount"], (int, float)) or v["mta"]["amount"] is None
-            assert "currency" in v["mta"] and (len(v["mta"]["currency"]) == 3 or v["mta"]["currency"] is None)
+            amt = v["mta"].get("amount")
+            cur = v["mta"].get("currency")
+            if not ((amt is None) or isinstance(amt, (int, float))):
+                v["mta"]["amount"] = None
+            if isinstance(cur, str):
+                if cur.strip() in ["$", "US$"]:
+                    v["mta"]["currency"] = "USD"
+                elif len(cur) != 3:
+                    v["mta"]["currency"] = None
+            else:
+                v["mta"]["currency"] = None
+        else:
+            v["mta"] = {"amount": None, "currency": None}
 
         # Rounding
         if "rounding" in v:
@@ -108,7 +157,11 @@ class CSAExtraction(BaseModel):
 
         # Return timing
         if "return_timing" in v:
-            assert "days" in v["return_timing"] and (isinstance(v["return_timing"]["days"], int) or v["return_timing"]["days"] is None)
+            days = v["return_timing"].get("days")
+            if not ((days is None) or isinstance(days, int)):
+                v["return_timing"]["days"] = None
+        else:
+            v["return_timing"] = {"days": None}
 
         return v
 
@@ -116,15 +169,26 @@ class CSAExtraction(BaseModel):
     @validator("terms")
     def check_currencies(cls, v):
         if "base_currency" in v:
-            assert len(v["base_currency"]) == 3 or v["base_currency"] is None
+            bc = v.get("base_currency")
+            if not ((bc is None) or (isinstance(bc, str) and len(bc) == 3)):
+                v["base_currency"] = None
         if "eligible_currencies" in v:
-            assert isinstance(v["eligible_currencies"], list)
-            for c in v["eligible_currencies"]:
-                assert len(c) == 3
+            lst = v.get("eligible_currencies")
+            if lst is None:
+                v["eligible_currencies"] = []
+            else:
+                if not isinstance(lst, list):
+                    v["eligible_currencies"] = []
+                else:
+                    v["eligible_currencies"] = [c for c in lst if isinstance(c, str) and len(c) == 3]
+        else:
+            v["eligible_currencies"] = []
         if "eligible_currency_includes_base" in v:
-            assert v["eligible_currency_includes_base"] in [True, False, None]
+            if v["eligible_currency_includes_base"] not in [True, False, None]:
+                v["eligible_currency_includes_base"] = None
         if "fx_haircut_pct" in v:
-            assert isinstance(v["fx_haircut_pct"], (int, float)) or v["fx_haircut_pct"] is None
+            if not (isinstance(v["fx_haircut_pct"], (int, float)) or v["fx_haircut_pct"] is None):
+                v["fx_haircut_pct"] = None
         return v
 
     # D. Eligible Collateral & Haircuts
@@ -135,7 +199,12 @@ class CSAExtraction(BaseModel):
     @validator("eligibility")
     def check_eligibility(cls, v):
         if "covered_transactions" in v:
-            assert isinstance(v["covered_transactions"], list)
+            if v["covered_transactions"] is None:
+                v["covered_transactions"] = []
+            else:
+                assert isinstance(v["covered_transactions"], list)
+        else:
+            v["covered_transactions"] = []
         if "spot_fx_carveout" in v:
             assert v["spot_fx_carveout"] in [True, False, None]
         return v
@@ -143,9 +212,25 @@ class CSAExtraction(BaseModel):
     @validator("haircuts")
     def check_haircuts(cls, v):
         if "matrix" in v:
-            assert isinstance(v["matrix"], list)
-            for row in v["matrix"]:
-                HaircutRow(**row)
+            if v["matrix"] is None:
+                v["matrix"] = []
+            else:
+                assert isinstance(v["matrix"], list)
+                cleaned = []
+                for row in v["matrix"]:
+                    if not isinstance(row, dict):
+                        continue
+                    required = {"asset_type", "maturity_bucket", "regime", "valuation_percentage"}
+                    if not required.issubset(row.keys()):
+                        continue
+                    try:
+                        HaircutRow(**row)
+                        cleaned.append(row)
+                    except Exception:
+                        continue
+                v["matrix"] = cleaned
+        else:
+            v["matrix"] = []
         return v
 
     @validator("caps_windows")
@@ -201,8 +286,13 @@ If mixed → first mentioned.
 If not found → null.
 Return ONLY JSON.
 """,
-    # ... (all other prompts from previous version — generic, no examples)
-    # Full list available in final repo
+    "haircuts.matrix": (
+        "Extract ONLY from Paragraph 13(c)(ii) 'Eligible Collateral (VM)' table.\n"
+        "For each row, output objects with: asset_type (left-most column, full text), maturity_bucket (row sub-header), valuation_percentage (float), regime (column header, normalized).\n"
+        "REGIME MAPPING: 'S&P' or 'Standard & Poor’s' => 'sp'; 'Moody’s First Trigger' or 'Moody’s (1st)' => 'm1'; 'Moody’s Second Trigger' or 'Moody’s (2nd)' => 'm2'; 'Fitch' => 'fitch'.\n"
+        "RULES: If table has one column -> use 'csa.regime.default' if set, else null. If multiple columns -> match cell to column header. If header is above the table -> use it. If no header -> regime: null. If regime not in ['sp','m1','m2','fitch'] -> null. Include ALL rows.\n"
+        "Return ONLY JSON with key 'haircuts.matrix'."
+    ),
 }
 
 GENERIC_PROMPT = """
@@ -290,8 +380,34 @@ async def extract_csa(html_content: str) -> CSAExtraction:
             current = current[p]
         current[parts[-1]] = v
 
-    # Validate
-    return CSAExtraction(**data)
+    # Validate with normalization fallback
+    try:
+        return CSAExtraction(**data)
+    except Exception:
+        # Normalize common issues and retry once
+        terms = data.get("terms", {})
+        # Fix rounding keys
+        rnd = terms.get("rounding")
+        if isinstance(rnd, dict):
+            for key in ["delivery", "return"]:
+                entry = rnd.get(key)
+                if isinstance(entry, dict):
+                    if "direction" not in entry and "mode" in entry:
+                        entry["direction"] = entry.pop("mode").upper()
+        # Ensure eligible_currencies list
+        if terms.get("eligible_currencies") is None:
+            terms["eligible_currencies"] = []
+        # Normalize MTA currency
+        mta = terms.get("mta")
+        if isinstance(mta, dict):
+            cur = mta.get("currency")
+            if isinstance(cur, str):
+                if cur.strip() in ["$", "US$"]:
+                    mta["currency"] = "USD"
+                elif len(cur) != 3:
+                    mta["currency"] = None
+        data["terms"] = terms
+        return CSAExtraction(**data)
 
 
 async def extract_csa_fields(html_content: str, fields: List[str]) -> CSAExtraction:

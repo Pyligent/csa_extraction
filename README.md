@@ -18,7 +18,7 @@ Extracts **1994/2016 ISDA Credit Support Annex (CSA)** terms from **HTML (EDGAR)
 | DOCX | Supported (`python-docx`) |
 | 1994 & 2016 VM CSA | Supported |
 | **Full Annex A/B/C expansion** | 100+ rows per doc |
-| Regime normalization | S&P, Moody's First/Second, Fitch |
+| Regime normalization (codes) | `sp`, `m1`, `m2`, `fitch` |
 | Abstain logic | Only explicit values |
 | Pydantic schema | Strict output validation |
 | pytest suite | 100% core coverage |
@@ -33,7 +33,7 @@ Extracts **1994/2016 ISDA Credit Support Annex (CSA)** terms from **HTML (EDGAR)
 class HaircutRow(BaseModel):
     asset_type: str
     maturity_bucket: str
-    regime: str
+    regime: str  # one of: "sp", "m1", "m2", "fitch" (or null when unspecified)
     valuation_percentage: float
 
 class CSAExtract(BaseModel):
@@ -101,7 +101,7 @@ class CSAExtract(BaseModel):
 | `eligibility.spot_fx_carveout` | Spot FX excluded? | `"Spot FX"`, `"FX transactions"` | `boolean` | VM / VM often excludes spot FX |
 | `eligibility.ratings_condition` | Ratings floor text | `"Rated at least..."`, `"NRSRO"` | `string` | Keep verbatim |
 | `eligibility.issuer_constraints` | Issuer/guarantor rules | `"Issuer must..."`, `"Government of..."` | `string` | Verbatim |
-| `csa.regime.default` | Haircut regime (S&P / Moody's) | `"S&P column/Moody's (First/Second)"` | `enum` | Global selector unless overridden |
+| `csa.regime.default` | Haircut regime (S&P / Moody's) | `"S&P column/Moody's (First/Second)"` | `enum` (`sp`/`m1`/`m2`/`fitch`) | Global selector unless overridden |
 | `haircuts.matrix[]` | **Per-row normalization** | `"Schedule"`, `"Schedule A"`, `"Eligible Collateral (VM)"` tables | `array[row]` | **See row schema below** |
 | `caps_windows.cash_cap_pct_of_U` | Cash cap (if any) | `"Cash collateral capped at..."` | `number` | Percent of U |
 | `caps_windows.issuer_cap` / `class_cap` / `currency_cap` / `global_cap` | Concentration limits | `"Concentration limits"` | `string/number` | Use verbatim; keep `%` numeric when explicit |
@@ -114,7 +114,7 @@ class CSAExtract(BaseModel):
 {
   "asset_type": "Cash in Eligible Currency",
   "maturity_bucket": "N/A",
-  "regime": "S&P",
+  "regime": "sp",
   "valuation_percentage": 100.0
 }
 ```
@@ -123,10 +123,12 @@ class CSAExtract(BaseModel):
 |------|--------|-------|
 | `asset_type` | Left column in table | Full text (e.g., `"U.S. Treasury Securities (Fixed Rate)"`) |
 | `maturity_bucket` | Row header | e.g., `"< 1 Year"`, `"1-5 Years"`, `"N/A"` for cash |
-| `regime` | Column header | Normalized: `"S&P"`, `"Moody's First Trigger"`, `"Fitch"` |
+| `regime` | Column header | Normalized codes: `"sp"`, `"m1"`, `"m2"`, `"fitch"` |
 | `valuation_percentage` | Cell value | Parsed from `"98%"`, `"100"` → `98.0`, `100.0` |
 
 > **Abstain rule**: Only populate if **all four** are present and explicit.
+
+LLM extraction: For `haircuts.matrix`, the model is prompted to extract ONLY from Paragraph 13(c)(ii) ("Eligible Collateral (VM)") and to map column headers to codes (`sp`/`m1`/`m2`/`fitch`). If a table has a single column with no recognizable header, regime is `null` unless `csa.regime.default` is explicitly set.
 
 ---
 
@@ -137,19 +139,19 @@ class CSAExtract(BaseModel):
   {
     "asset_type": "Cash in USD",
     "maturity_bucket": "N/A",
-    "regime": "S&P",
+  "regime": "sp",
     "valuation_percentage": 100.0
   },
   {
     "asset_type": "Fixed-Rate U.S. Treasury Securities",
     "maturity_bucket": "< 1 Year",
-    "regime": "Moody's First Trigger",
+  "regime": "m1",
     "valuation_percentage": 95.2
   },
   {
     "asset_type": "Agency MBS",
     "maturity_bucket": "Any",
-    "regime": "Fitch",
+  "regime": "fitch",
     "valuation_percentage": 90.0
   }
 ]
@@ -169,6 +171,10 @@ pip install -r requirements.txt
 
 ```bash
 python cli.py tests/fixtures/c26685exv10w8.htm > csa.json
+# With LLM (all fields)
+python cli.py tests/fixtures/c26685exv10w8.htm --with-llm > csa_llm.json
+# With LLM (only haircuts.matrix)
+python cli.py tests/fixtures/c26685exv10w8.htm --with-llm --llm-fields haircuts.matrix > csa_llm_haircuts.json
 ```
 
 ---
@@ -223,9 +229,19 @@ pytest -v
 ---
 
 **Maintained by Pyligent**  
-*Last updated: October 28, 2025*
+*Last updated: October 30, 2025*
+---
+
+## HOW TO ADD TO YOUR REPO
+
+Replace your current `README.md` with this one:
+
+```bash
+cd csa_extraction
+cat > README.md << 'EOF'
+# Paste entire README above here
+EOF
+git add README.md
+git commit -m "docs: complete spec-aligned README with A/B/C/D tables"
+git push
 ```
-
-- Add **Web UI**?
-
-Just say: **“Add CI”** — done in 60 seconds.
