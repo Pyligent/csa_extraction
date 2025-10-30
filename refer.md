@@ -181,12 +181,3 @@ for table in soup.find_all('table'):
         parse_haircut_table(table, result)
 ```
 
----
-
-**Want me to generate:**
-- **Full parser code** (`html.py`) with all fields?
-- **Unit tests** for 100% coverage?
-- **Pydantic schema** + validation?
-- **CI pipeline**?
-
-Just say: **“Build full parser”** — done in 60 seconds.
