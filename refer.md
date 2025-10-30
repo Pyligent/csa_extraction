@@ -181,3 +181,39 @@ for table in soup.find_all('table'):
         parse_haircut_table(table, result)
 ```
 
+---
+
+## **System Design Overview**
+
+- Input handling: detects file type by suffix; PDF/DOCX/TXT are converted to normalized text and funneled to the HTML parser logic.
+- Pre‑cleaning: `extractor/clean.py` removes SEC/EDGAR boilerplate, collapses whitespace, and unescapes entities for stable regex anchors.
+- Rule‑based extraction: `extractor/parsers/html.py` implements anchor‑window extraction, signature‑block party detection, rounding parsing, FX haircut detection, and conservative abstain defaults.
+- Haircut tables: headers are scanned to infer regimes and expand row/column matrices into `haircuts.matrix[]` with normalized percentages.
+- LLM extraction: `extractor/parsers/csa_llm_extraction.py` runs field‑specific prompts in parallel, validates via Pydantic, and returns a top‑level `llm` tab when `--with-llm` is set.
+
+### LLM Prompts – Focus Areas
+
+Prompts emphasize explicit anchors and abstain rules for the following fields:
+- `terms.regular_settlement_day`
+- `terms.return_timing.days`
+- `terms.base_currency`
+- `terms.eligible_currencies`
+- `eligibility.covered_transactions`
+- `eligibility.spot_fx_carveout`
+- `eligibility.issuer_constraints`
+
+Each prompt instructs the model to return only JSON, cite only explicit values, and output `null`/`[]` when not present.
+
+### Environment & Secrets
+
+Place secrets in `.env` (ignored by Git):
+
+```
+OPENAI_API_KEY=sk-...
+OPENAI_MODEL=gpt-4o-mini
+```
+
+Use `--llm-fields` to limit the subset for faster iterations.
+
+---
+

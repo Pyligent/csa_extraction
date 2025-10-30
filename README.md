@@ -219,3 +219,28 @@ docker run -p 8000:8000 csa-extractor
 curl -L <EDGAR_URL> -o tests/fixtures/new_csa.htm
 pytest -v
 ```
+
+---
+
+### LLM Extraction (Optional)
+
+Set up `.env` with `OPENAI_API_KEY` and optionally `OPENAI_MODEL`. Then:
+
+```bash
+python cli.py data/example.htm --with-llm > out.json
+# or limit fields for faster runs
+python cli.py data/example.htm --with-llm --llm-fields terms.base_currency,terms.eligible_currencies > out.json
+```
+
+The output includes an `llm` object alongside the rule-based results. Values follow the Golden Rule—only explicitly stated values are populated.
+
+---
+
+### Design Highlights
+
+- Pre-cleaning: `extractor/clean.py` removes boilerplate and normalizes whitespace.
+- Parsers: HTML logic in `extractor/parsers/html.py`; PDF/DOCX/TXT reuse HTML on extracted text.
+- Parties: detected via preamble “between … and …”, inline labels, and signature blocks.
+- Haircuts: regime headers determine `csa.regime.default` when singleton; otherwise abstain unless explicitly stated.
+- LLM: `extractor/parsers/csa_llm_extraction.py` prompts per field and validates via Pydantic.
+
