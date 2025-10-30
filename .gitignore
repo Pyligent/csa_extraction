@@ -13,3 +13,7 @@ __pycache__/
 
 # Test cache
 .pytest_cache/
+
+# Node
+services/web/node_modules/
+services/web/.next/

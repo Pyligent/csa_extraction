@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 ## `README.md` 
@@ -242,3 +243,6 @@ The output includes an `llm` object alongside the rule-based results. Values fol
 - Haircuts: regime headers determine `csa.regime.default` when singleton; otherwise abstain unless explicitly stated.
 - LLM: `extractor/parsers/csa_llm_extraction.py` prompts per field and validates via Pydantic.
 
+=======
+# Scaffold created. See services/api and services/web.
+>>>>>>> 0ed39d4 (docs: minor .gitignore and README updates)
