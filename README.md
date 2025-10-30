@@ -2,7 +2,7 @@ Below is the **complete, production-ready `README.md`** for your **Universal ISD
 
 ---
 
-## `README.md` – **COPY-PASTE FULL FILE**
+## `README.md` 
 
 ```markdown
 # Universal ISDA CSA Extractor
@@ -219,40 +219,3 @@ docker run -p 8000:8000 csa-extractor
 curl -L <EDGAR_URL> -o tests/fixtures/new_csa.htm
 pytest -v
 ```
-
----
-
-## Repo
-
-**https://github.com/Pyligent/csa_extraction**
-
----
-
-**Maintained by Pyligent**  
-*Last updated: October 28, 2025*
-```
-
----
-
-## HOW TO ADD TO YOUR REPO
-
-Replace your current `README.md` with this one:
-
-```bash
-cd csa_extraction
-cat > README.md << 'EOF'
-# Paste entire README above here
-EOF
-git add README.md
-git commit -m "docs: complete spec-aligned README with A/B/C/D tables"
-git push
-```
-
----
-
-**Want me to:**
-- Add **GitHub Actions CI**?
-- Add **JSON schema export**?
-- Add **Web UI**?
-
-Just say: **“Add CI”** — done in 60 seconds.
