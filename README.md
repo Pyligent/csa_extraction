@@ -1,6 +1,4 @@
-Below is the **complete, production-ready `README.md`** for your **Universal ISDA CSA Extractor** — fully aligned with your **A/B/C/D specification**, including **tables**, **examples**, **abstain rules**, and **test coverage**.
 
----
 
 ## `README.md` 
 
