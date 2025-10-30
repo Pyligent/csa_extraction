@@ -1,4 +1,3 @@
-Below is the **complete, production-ready extraction guideline** for **every field in your CSA schema** — **100% aligned with your A/B/C/D spec tables**, **abstain logic**, **real-world anchors**, and **deterministic rules**.
 
 This is the **single source of truth** for:
 - Manual review
