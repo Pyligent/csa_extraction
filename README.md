@@ -175,7 +175,19 @@ python cli.py tests/fixtures/c26685exv10w8.htm > csa.json
 python cli.py tests/fixtures/c26685exv10w8.htm --with-llm > csa_llm.json
 # With LLM (only haircuts.matrix)
 python cli.py tests/fixtures/c26685exv10w8.htm --with-llm --llm-fields haircuts.matrix > csa_llm_haircuts.json
+# Full suite (rule + llm + hybrids) with timestamped outputs
+python cli.py tests/fixtures/c26685exv10w8.htm --suite
+
+# Custom destination for suite artifacts (default: tests/results)
+python cli.py tests/fixtures/c26685exv10w8.htm --suite --suite-results-root out/csa_runs
 ```
+
+`--suite` runs all four extractors (rule, LLM, hybrid, hybrid v2), then saves:
+- Individual JSON outputs (`*_non_llm.json`, `*_llm.json`, `*_hybird.json`, `*_v2.json`)
+- A structured diff report comparing key fields (`*_diff.json`)
+- A merged overlay that prioritizes hybrid → v2 → LLM → rule fields (`*_merge.json`)
+
+Each run lands in `suite-results-root/<file_stem>_<YYYYMMDD_HHMMSS>/`, making it easy to diff successive passes or share artifacts.
 
 ---
 
